@@ -1,0 +1,49 @@
+<div class="display-1 text-center">
+Log IN 
+</div>
+<br>
+<br> 
+<form [formGroup]="userForm" (ngSubmit)="afterSubmit()" class="mx-auto">
+
+    <fieldset class="form-group container">
+      <div class="col-4"></div>
+        <div class="row d-block mx-auto d-flex col-4 justify-content-center">
+            <div class="   mx-auto form-check w-50">
+              <input class="form-check-input " formControlName="userType" type="radio" name="userType" id="gridRadios1" value="user">
+
+              <label class="form-check-label mx-auto" for="gridRadios1">
+                User Login   </label>
+            </div>
+
+            <div class=" mx-auto form-check w-50">
+              <input class="form-check-input" formControlName="userType" type="radio" name="userType" id="gridRadios2" value="admin">
+              <label class="form-check-label" for="gridRadios2">
+                Admin Login
+              </label>
+            </div>
+          </div>
+          <div class="col-4"></div>
+
+      </fieldset>
+      <br>
+    <div  class="form-group row">
+      <div class="col mx-auto">
+        <input type="text" formControlName="username" class="form-control w-50 mx-auto" id="inputUsername" placeholder="Email">
+      </div>
+    </div>
+    <br>
+    <div class="form-group row">
+      <div class="col mx-auto ">
+        <input type="password" formControlName="password" class="form-control w-50 mx-auto" id="inputPassword" placeholder="Password">
+      </div>
+      <p *ngIf = errOutputStatus >{{errOutput}}</p>
+    </div>
+      <div class="col ">
+        <button type="submit"  class="btn btn-primary d-block  mx-auto">Login</button>
+
+        <p  class=" d-block  mx-auto">Don't have an account yet? <a routerLink="/signup"> Sign up...</a></p>
+      </div>
+    <br>
+
+ 
+  </form>

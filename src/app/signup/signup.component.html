@@ -1,0 +1,37 @@
+<div class="display-1 text-center mb-1">
+  Signup works!
+  </div>
+<h5 *ngIf="errStatus" class="text-center test-danger m-3">{{errMsg}}</h5>
+
+<form  
+[formGroup]="userFormInfo"
+ (ngSubmit)="onFormSubmit()" >
+
+
+    <div class="imgcontainer">
+      <i class="bi h1 bi-box-arrow-in-right"></i>
+    </div>  
+    <div class="container">
+      <input type="text" class=" w-50 d-block mx-auto shadow" placeholder="Enter Username" 
+      id="username" 
+      formControlName="username"
+      name="username" required>
+  
+      <input type="password" class=" w-50  d-block mx-auto shadow" placeholder="Enter Password" 
+      formControlName="password"
+      name="psw" required>
+
+      <input type="text" class=" w-50  d-block mx-auto shadow" placeholder="Enter email"       formControlName="email"
+      name="email" required>
+
+      <input type="text" class=" w-50  d-block mx-auto shadow" placeholder="Enter city" formControlName="city"name="city" id="city" required>
+
+      <input type="file" id="profilePic" class=" w-50  d-block mx-auto shadow" placeholder="Enter city" formControlName="profilePic" name="profilePic" 
+      (change)="onFileSelect($event)" required>
+  
+  
+      <button type="submit" class="btn w-25 login-btn d-block mx-auto shadow">Sign In</button>
+     
+    </div>
+   
+  </form>

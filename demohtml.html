@@ -1,0 +1,42 @@
+
+<div class="container  divhead mx-auto row text-light ">
+    <div class="col divnav  " style="list-style: none;">
+        <ul *ngIf="!authService.userLoginStatus">
+            
+
+        <li><p routerLink="home" class="display-6 text-light text-center" routerLinkActive="active">
+             <i class="bi h5 bi-house-heart"></i>
+        </p>
+        </li>
+        <li>
+            <p routerLink="login" class="display-6 text-light text-center" routerLinkActive=""> 
+                 <i class="bi h4  bi-box-arrow-in-right"></i>
+            </p>
+        </li>
+       
+       <li>
+           <p routerLink="sign-up" class="display-6 text-light text-center" routerLinkActive=""> 
+                <i class="bi h4 bi-pen-fill"></i>
+           </p>
+       </li>
+       <li>
+           <p routerLink="contactus" class="display-6 text-light text-center" routerLinkActive="">
+                 <i class="bi h5 bi-telephone-outbound-fill"></i></p>
+       </li>
+    </ul>
+       <ul *ngIf="authService.userLoginStatus">
+        <li>
+            <p (click)="authService.logoutUser()" routerLink="login" class="display-6 text-light text-center" routerLinkActive=""> 
+                 <i class="bi h4 bi-box-arrow-in-left"></i>
+            </p>
+        </li>
+       </ul>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+

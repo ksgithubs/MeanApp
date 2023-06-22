@@ -1,0 +1,25 @@
+
+
+<div class="display-1 text-center">
+    User Profile
+</div>
+
+    <div class="d-block mx-auto text-center">
+           
+            Welcome ,{{user.username}}
+        </div>
+
+        <div class="d-block mx-auto text-center">
+            <img class="rounded" src={{user.profilePic}} alt="" width="150px" >
+
+        </div>
+
+        <button class="btn btn-success mt-5 d-block mx-auto" 
+        (click) = "getPrivateData()"> Get </button>
+
+
+
+        <div *ngfor  ="let product of products"      >
+
+            <h5> {{product.productName}}</h5>
+        </div>

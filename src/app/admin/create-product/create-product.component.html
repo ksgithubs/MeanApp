@@ -1,0 +1,43 @@
+<p>create-product works!</p>
+
+
+<div class="display-1 text-center mb-1">
+    Product profile  </div>
+    <h5  class="text-center test-danger m-3"></h5>
+    
+    <!-- <h5 *ngIf="errStatus" class="text-center test-danger m-3">{{errMsg}}</h5> -->
+    
+     <form  [formGroup]="userFormInfo" (ngSubmit)="onFormSubmit()" >
+    
+        <div class="imgcontainer">
+          <i class="bi h1 bi-bag-fill"></i>
+        </div>
+      
+        <div class="container">
+          <input type="text" class=" w-50 d-block mx-auto shadow" placeholder="Enter Product Name" 
+          id="username" 
+          formControlName="username"
+          name="username" required>
+      
+          <input type="text" class=" w-50  d-block mx-auto shadow" placeholder="Enter Product type" 
+          formControlName="password"
+          name="psw" required>
+    
+          <input type="text" class=" w-50  d-block mx-auto shadow" placeholder="Enter Price"       formControlName="email"
+          name="email" required>
+    
+          <input type="text" class=" w-50  d-block mx-auto shadow" placeholder="Enter Quantity" formControlName="city"name="city" id="city" required>
+    
+          <input type="file" id="profilePic" class=" w-50  d-block mx-auto shadow" placeholder="Enter city" formControlName="profilePic" name="profilePic" 
+           required>
+    
+          <!-- <input type="file" id="profilePic" class=" w-50  d-block mx-auto shadow" placeholder="Enter city" formControlName="profilePic" name="profilePic" 
+          (change)="onFileSelect($event)" required> -->
+      
+      
+          <button type="submit" class="btn w-25 login-btn d-block mx-auto shadow">Add Product</button>
+         
+        </div>
+       
+      </form>
+    
