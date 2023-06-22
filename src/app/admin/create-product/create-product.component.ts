@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-create-product',
@@ -18,7 +17,7 @@ export class CreateProductComponent implements OnInit {
   userFormInfo:FormGroup;
 
 
-  constructor ( private fb:FormBuilder, private userService:UserService,private router:Router) { }
+  constructor ( private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
       this.userFormInfo=this.fb.group({
@@ -45,25 +44,25 @@ export class CreateProductComponent implements OnInit {
     formData.append('profilePic',this.image)
 
     console.log(this.userFormInfo.value)
-    this.userService.createUser(formData).subscribe({
+    // this.userService.createUser(formData).subscribe({
       
-      next:(res)=>{
-        if(res.message=="User Created"){
-          this.errStatus= false;
+    //   next:(res)=>{
+    //     if(res.message=="User Created"){
+    //       this.errStatus= false;
 
-          //navigate to login page
-          this.router.navigateByUrl("/login")
-        }
-        else{ 
-          this.errStatus=true;
-          this.errMsg=res.message;
+    //       //navigate to login page
+    //       this.router.navigateByUrl("/login")
+    //     }
+    //     else{ 
+    //       this.errStatus=true;
+    //       this.errMsg=res.message;
   
-        }
+    //     }
 
-      },
-      error:()=>{
-      }
-    })
+    //   },
+    //   error:()=>{
+    //   }
+    // })
   }
 
 

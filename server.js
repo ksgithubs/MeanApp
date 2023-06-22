@@ -52,6 +52,7 @@ app.use('/admin', adminApp)
 
 
 
+
 app.get('/*',(req, res)=>{
     res.sendFile(path.join(__dirname,'./dist/mean-app/index.html'),err=>{
         if(err){
