@@ -42,7 +42,6 @@ const adminApp = require('./backend/APIs/adminAPIs')
 
 // add body parser middleware
 app.use(exp.json())
-app.use(exp.urlencoded())
 
 app.use('/user', userApp)
 app.use('/product', productApp)
